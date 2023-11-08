@@ -2,26 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+:root{
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  -webkit-text-size-adjust:100%;
+  font-synthesis:none;
+  text-rendering:optimizeLegibility
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0
 }
+
+html {
+  font-size:1.125rem;
+  scroll-behavior: initial;
+} 
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background:#292929;
+  font-family:system-ui, -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
+  overflow:hidden
+}
+
+svg {
+  height:5vh;
+  width:5vh
+}
+
+a {
+  color:inherit;
+  font-weight:500;
+  text-decoration:none
+}
+
+a:hover {
+  color:#09f
+}
+
+button { 
+  background:0;
+  border:0;
+  color:inherit;
+  cursor:pointer;
+  font-family:inherit;
+  font-size:inherit;
+  font-weight:inherit;
+  outline:0
 }
