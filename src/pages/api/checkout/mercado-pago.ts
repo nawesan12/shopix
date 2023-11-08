@@ -4,9 +4,12 @@ import type {
   PreferencePayer,
   PreferenceBackUrl,
 } from "mercadopago/models/preferences/create-payload.model";
-import { NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from "next";
 
-export default function handler(req: Request, res: NextApiResponse) {
+export default function paymentMercadoPagoHandler(
+  req: NextApiRequest,
+  res: NextApiResponse<{ global: string | undefined }>
+) {
   const mercadopago = new MercadoPagoConfig({
     accessToken: process.env.MP_ACCESS_TOKEN as string,
   });
