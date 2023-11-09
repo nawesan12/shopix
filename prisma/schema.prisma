@@ -41,12 +41,12 @@ model Payment {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
+  id        String    @id @default(uuid())
+  email     String    @unique
   password  String
   firstName String
   lastName  String
-  birthdate DateTime
+  birthdate DateTime?
   points    Int
   purchases Cart[]
 }

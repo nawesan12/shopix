@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 import { emailRGX, passwordRGX } from "@/utils/regex";
 import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
