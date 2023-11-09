@@ -6,6 +6,47 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider     = "postgresql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+enum Currency {
+  ARS
+  USD
+  EUR
+}
+
+model Product {
+  id     Int   @id @default(autoincrement())
+  Cart   Cart? @relation(fields: [cartId], references: [id])
+  cartId Int?
+
+  @@index([cartId])
+}
+
+model Cart {
+  id       Int       @id @default(autoincrement())
+  products Product[]
+  User     User?     @relation(fields: [userId], references: [id])
+  userId   String?
+
+  @@index([userId])
+}
+
+model Payment {
+  id       Int      @id @default(autoincrement())
+  amount   Int
+  currency Currency @default(ARS)
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  firstName String
+  lastName  String
+  birthdate DateTime
+  points    Int
+  purchases Cart[]
 }
