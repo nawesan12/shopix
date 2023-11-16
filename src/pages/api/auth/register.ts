@@ -44,5 +44,5 @@ export default async function registerHandler(
 
   const token = sign(userAGuardar, process.env.TOKEN_SECRET as string);
 
-  res.status(500).json({ token });
+  res.status(200).json({ token });
 }
