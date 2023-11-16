@@ -46,5 +46,7 @@ export default async function loginHandler(
     expiresIn: "7d",
   });
 
+  // PAGES
   res.status(200).json({ token, authorized: true });
+  // APP = return new Response(JSON.stringify({token, authorized: true}), { status: 200 })
 }

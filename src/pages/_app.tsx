@@ -1,3 +1,4 @@
+import Chat from "@/components/Chat";
 import { CartProvider } from "@/context/CartContext";
 import { UserProvider } from "@/context/UserContext";
 import "@/styles/globals.css";
@@ -8,6 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <UserProvider>
       <CartProvider>
         <Component {...pageProps} />
+        <Chat />
       </CartProvider>
     </UserProvider>
   );
