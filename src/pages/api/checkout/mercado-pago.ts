@@ -51,11 +51,11 @@ export default function paymentMercadoPagoHandler(
 
   preference
     .create({ body: preferenceOptions } as PreferenceCreateData)
-    .then(function (response) {
+    .then(function (response: any) {
       console.log(response);
       res.status(200).json({ global: response.id });
     })
-    .catch((error) => {
+    .catch((error: any) => {
       console.log(error);
       res.status(500).json({ global: error });
     });

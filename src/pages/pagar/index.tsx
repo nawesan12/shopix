@@ -1,5 +1,4 @@
-import { useEffect, useContext } from "react";
-import { CartContext } from "@/context/CartContext";
+import { useEffect } from "react";
 
 export default function MPButton() {
   useEffect(() => {
