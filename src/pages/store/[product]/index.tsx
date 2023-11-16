@@ -1,6 +1,7 @@
+import { Product } from "@/types/components.types";
 import Image from "next/image";
 
-export default function UniqueProductPage({ product }: { product: any }) {
+export default function UniqueProductPage({ product }: { product: Product }) {
   return (
     <>
       <Image src={product.image} alt="" width={100} height={100} />
